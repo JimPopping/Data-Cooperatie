@@ -48,7 +48,7 @@
         errorSteps: [], // Highlight step with errors
         hiddenSteps: [], // Hidden steps
         theme: 'default', // theme for the wizard, related css need to include for other than default theme
-        transitionEffect: 'fade', // Effect on navigation, none/slide/fade
+        transitionEffect: 'slide', // Effect on navigation, none/slide/fade
         transitionSpeed: '400'
     };
 

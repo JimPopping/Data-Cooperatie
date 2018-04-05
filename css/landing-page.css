@@ -556,3 +556,7 @@ a:hover {
     background-color: #e26f02 !important;
     border-color: #e26f02 !important;
   }
+  .dataSelectTimes {
+    float: right;
+    line-height: 1;
+  }
