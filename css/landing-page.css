@@ -1,0 +1,558 @@
+@font-face {
+    font-family: KadasterLtLF;
+    src: url("../fonts/Auto 1 Lt LF Italic.ttf")
+}
+@font-face {
+    font-family: KadasterItalic;
+    src: url("../fonts/Auto 1 Italic.ttf")
+}
+@font-face {
+    font-family: KadasterRegular;
+    src: url("../fonts/Auto 1 Regular.ttf")
+}
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
+
+  .searchEngine {
+    background: url("../img/map.png") no-repeat center center;
+  }
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead-4-K.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem; }
+  header.masthead .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.2; }
+  header.masthead h1 {
+    font-size: 2rem; }
+  @media (min-width: 768px) {
+    header.masthead {
+      padding-top: 8rem;
+      padding-bottom: 8rem; }
+      header.masthead h1 {
+        font-size: 3rem; } }
+
+.showcase .showcase-text {
+  padding: 3rem; }
+
+.showcase .showcase-img {
+  min-height: 30rem;
+  background-size: cover; }
+
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem; } }
+
+.features-icons {
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+  .features-icons .features-icons-item {
+    max-width: 20rem; }
+    .features-icons .features-icons-item .features-icons-icon {
+      height: 7rem; }
+      .features-icons .features-icons-item .features-icons-icon i {
+        font-size: 4.5rem; }
+    .features-icons .features-icons-item:hover .features-icons-icon i {
+      font-size: 5rem; }
+
+.testimonials {
+  padding-top: 7rem;
+  padding-bottom: 7rem; }
+  .testimonials .testimonial-item {
+    max-width: 18rem; }
+    .testimonials .testimonial-item img {
+      max-width: 12rem;
+      box-shadow: 0px 5px 5px 0px #adb5bd; }
+
+.call-to-action {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead2.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem; }
+  .call-to-action .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3; }
+
+    .over-ons-titel {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead-6.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem; }
+  .over-ons-titel .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3; }
+
+    .over-kpi {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/KPI.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem; }
+  .over-kpi .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3; }
+
+    .kaart-van-de-toekomst {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead-4.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem; }
+  .kaart-van-de-toekomst .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3; }
+
+    .inschrijven-titel {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead-5.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem; }
+  .inschrijven-titel .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3; }
+
+    .contact-titel {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead-8.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem; }
+  .contact-titel .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3; }
+
+    .logo-section {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead2.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 4rem; }
+  .logo-section .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3; }
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  bottom: 0;
+  position: static;
+  width: 100%;
+  }
+
+.dc-navbar {
+  transition: all 0.3s;
+  color: #007ea9 !important;
+  font-weight: bold;
+}.dc-navbar:hover {
+    color: #00387d !important;
+}.nav-link.active {
+  color: #00387d !important;
+}
+.navbar-brand {
+    font-family: KadasterLtLF; 
+    font-size: 150%;
+    letter-spacing: 0.25px;
+    color: #007ea9 !important;
+    transition: all 0.3s;
+} .navbar-brand:hover {
+    color: #006590 !important;
+}
+.text-primary {
+    color: #007ea9!important;
+}
+.navbar-light {
+  background-color: white!important;
+  -webkit-box-shadow: 0px 0px 8px 0px #777777; 
+  box-shadow: 0px 0px 8px 0px #777777;
+}
+.social {
+  color: #007ea9!important;
+}
+.social:hover {
+  color: #006A95!important;
+}
+.navigation-font-kadaster {
+  font-family: KadasterRegular;
+  color: #007ea9 !important; 
+}
+.kadaster-font-regular {
+  font-family: KadasterRegular;
+}
+.kadaster-font-italic {
+  font-family: KadasterRegular;
+}
+.kadaster-font-LtLF {
+  font-family: KadasterLtLF;
+}
+.footernav {
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none !important;
+}
+.logo-img {
+  max-width: 100%;
+  width: 30%;
+  height: auto;
+}
+.button-shadow {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.button-shadow:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.title-shadow {
+    text-shadow: 0px 0px 3px rgba(0,0,0,1);
+  }
+h1, h4 {
+    word-break: break-word;
+   }
+.page-scroll {
+  /* transition */
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+.btn-outline-light {
+  border-color: rgb(206, 212, 218)
+
+}
+.btn-outline-light:hover {
+  border-color: rgb(206, 212, 218)
+
+}
+
+/** BUTTONS in Kadasterkleuren/style 
+
+kobaltblauw:        #00387d;
+klassiek groen:     #007ea9;
+innovatief blauw:   #008dc9;
+krachtig geel:      #d9c900;
+krachtig groen:     #70a426;
+
+PDOK oranje:        #e26f02;
+
+Regels kleuren Kadaster:
+• Geel en groen zijn puur accentkleuren; ze worden nooit gebruikt om een groot vlak te vullen.
+• Wit speelt een belangrijke rol; het zorgt voor rust en ruimte op de pagina en vergroot zo de leesbaarheid.
+• Klassiek groen  en kobalt vormen de basiskleuren. 
+• Wit en innovatief blauw vullen de basiskleuren aan.
+
+**/
+
+/** primary button in kobaltblauw **/
+.btn-primary {
+  color: #fff;
+  background-color: #00387d;
+  border-color: #00387d;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #002B70;
+  border-color: #002469;
+}
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 56, 125, 0.5);
+}
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: #00387d;
+  border-color: #00387d;
+}
+.btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #001F64;
+  border-color: #002469;
+  box-shadow: 0 0 0 0.2rem rgba(0, 56, 125, 0.5);
+}
+
+/** secondary button in klassiek groen**/
+.btn-secondary {
+  color: #fff;
+  background-color: #007ea9;
+  border-color: #007ea9;
+}
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #00719C;
+  border-color: #006A95;
+}
+.btn-secondary:focus, .btn-secondary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 126, 169, 0.5);
+}
+.btn-secondary.disabled, .btn-secondary:disabled {
+  background-color: #007ea9;
+  border-color: #007ea9;
+}
+.btn-secondary:not([disabled]):not(.disabled):active, .btn-secondary:not([disabled]):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #006590;
+  border-color: #006A95;
+  box-shadow: 0 0 0 0.2rem rgba(0, 126, 169, 0.5);
+}
+
+/** primary outline button in kobaltblauw **/
+.btn-outline-primary {
+  color: #00387d;
+  background-color: transparent;
+  background-image: none;
+  border-color: #00387d;
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #00387d;
+  border-color: #00387d;
+}
+.btn-outline-primary:focus, .btn-outline-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 56, 125, 0.5);
+}
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
+  color: #00387d;
+  background-color: transparent;
+}
+.btn-outline-primary:not([disabled]):not(.disabled):active, .btn-outline-primary:not([disabled]):not(.disabled).active,
+.show > .btn-outline-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #00387d;
+  border-color: #00387d;
+  box-shadow: 0 0 0 0.2rem rgba(0, 56, 125, 0.5);
+}
+
+/** secondary outline button in kobaltblauw **/
+.btn-outline-secondary {
+  color: #007ea9;
+  background-color: transparent;
+  background-image: none;
+  border-color: #007ea9;
+}
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #007ea9;
+  border-color: #007ea9;
+}
+.btn-outline-secondary:focus, .btn-outline-secondary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 126, 169, 0.5);
+}
+.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
+  color: #007ea9;
+  background-color: transparent;
+}
+.btn-outline-secondary:not([disabled]):not(.disabled):active, .btn-outline-secondary:not([disabled]):not(.disabled).active,
+.show > .btn-outline-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #007ea9;
+  border-color: #007ea9;
+  box-shadow: 0 0 0 0.2rem rgba(0, 126, 169, 0.5);
+}
+
+/** page link in klassiek groen**/
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007ea9;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.page-link:focus, .page-link:hover {
+  color: #00719C;
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-color: #ddd;
+}
+/** links in klassiek groen**/
+a {
+  color: #007ea9;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+a:hover {
+  color: #006A95;
+  text-decoration: underline;
+}
+.navbar-light {
+    color: #007ea9;
+  }
+.navbar-toggler {
+    font-size: 150%;
+    border: 0px;
+    background-color: #007ea9;
+    color: #ffffff !important;
+    text-decoration: none !important; 
+  }
+   .navbar-toggler:hover {
+    background-color: #00719C;
+   }
+    .navbar-toggler:focus, .navbar-toggler.focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 56, 125, 0.5);
+}
+
+.modal-header {
+  background-color: #007ea9;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  color: #fff;
+}
+.modal-body {
+  background-color: #f8f9fa;
+  border-radius: 2px !important;
+  
+}
+.close-modal1 {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+.kpi_afb img {
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  -webkit-transition: 0.10s;
+  -moz-transition: 0.10s;
+  transition: 0.10s;
+}
+.kpi_afb img:hover {
+  opacity:  0.5;
+  }
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #00719C!important;
+}
+
+.navbar-dark {
+  color: #fff !important;
+  background-color: #007ea9 !important;
+}
+.icon-steps {
+    color: #00387d !important;
+  }
+  .jumbo-front {
+    background-color: #007ea9;
+    color: #fff;
+  }
+  .scroll-menu {
+    top:100px;
+    width:100%;
+    z-index:100;
+  }
+  .scroll-menu-faq {
+    top:100px;
+    width:100%;
+    z-index:100;
+  }
+  .wizardNav {
+    top:75px;
+    background-color: #fff;
+    z-index:1001;
+  }
+  .kb {
+    background-color: #00387d !important;
+    border-color: #00387d !important;
+  }
+  .pdokOranje {
+    background-color: #e26f02 !important;
+    border-color: #e26f02 !important;
+  }
