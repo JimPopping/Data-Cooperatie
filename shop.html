@@ -1,37 +1,45 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 
 <head>
+    <!-- Algemene informatie -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="De DataCoöperatie">
+    <meta name="author" content="Kadaster">
     <title>DataCoöperatie - Datashop</title>
     <link href="img/favicon.png" rel="Shortcut Icon">
+
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
     <!-- Fonts -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <!-- CSS bestand -->
+
+    <!-- CSS bestanden -->
     <link href="css/landing-page.css" rel="stylesheet">
     <link href="css/smart_wizard.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">
-    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
-    integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
-    crossorigin=""></script>
+
+    <link rel="stylesheet" href="vendor/jQRangeSlider-5.7.2/css/classic.css" type="text/css" />
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
     <script src="js/L.TileLayer.BetterWMS.js"></script>
-    <!-- Fullscreen control -->
+
+    <!-- Fullscreen Leaflet control -->
     <script src="js/Control.FullScreen.js"></script>
     <link href="css/Control.FullScreen.css" rel="stylesheet">
-    <!-- Zoom info label -->
-    <script src="js/L.Control.ZoomLabel.js"></script>
-    <link rel="stylesheet" href="css/L.Control.ZoomLabel.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
 
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/leaflet.groupedlayercontrol.min.css"/>
+    <script src="js/leaflet.groupedlayercontrol.min.js"></script>
+    
 </head>
 
 <body id="page-top">
@@ -39,10 +47,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <img src="img/KDC_logo_demo.png" style="width: 180px;">
+                <img src="img/KDC_logo_demo.png" style="width: 190px;">
             </a>
             <button class="navbar-toggler btn-bars" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars" aria-hidden="true"></i>
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="nav navbar-nav" id="myTab" role="tablist">
@@ -59,14 +67,14 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark static-top">
         <div class="container">
             <a class="navbar-brand" style="color: white !important;">
                 <i class="fas fa-shopping-cart"></i>
-                producten bestellen
+                Producten bestellen
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdownShop" aria-controls="navbarNavDropdownShop" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-chevron-circle-down"></i>
+            <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbarNavDropdownShop" aria-controls="navbarNavDropdownShop" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-cog"></i>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdownShop">
                 <ul class="navbar-nav">
@@ -79,7 +87,6 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="far fa-user"></i> Linda de Mol
-
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Mijn account</a>
@@ -87,6 +94,12 @@
                             <a class="dropdown-item" href="#">Mijn aankopen</a>
                             <a class="dropdown-item" href="#">Uitloggen</a>
                         </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            <i class="far fa-question-circle"></i> Hulp
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -122,7 +135,7 @@
                                 L.tileLayer('https://geodata.nationaalgeoregister.nl/tiles/service/wmts/brtachtergrondkaart/EPSG:3857/{z}/{x}/{y}.png', {
                                     attribution: 'NLMaps',
                                     maxZoom: 18,
-                                    zoomControl: false,
+                                    zoomControl: true,
                                 }).addTo(map);
 
                                 //Hieronder de layers (WMS)
@@ -131,7 +144,7 @@
                                         layers: 'landsgrens',
                                         format:'image/png',
                                         attribution: 'Nederland',
-                                        transparent: true
+                                        transparent: true,
                                     }),
                                     Provincie: L.tileLayer.betterWms('https://geodata.nationaalgeoregister.nl/bestuurlijkegrenzen/ows?', {
                                         layers: 'provincies',
@@ -150,15 +163,12 @@
                                         format:'image/png',
                                         attribution: 'Buurt',
                                         transparent: true
-                                    }),
-                                    Pand: L.tileLayer.betterWms('https://geodata.nationaalgeoregister.nl/bag/ows?', {
-                                        layers: 'pand',
-                                        format:'image/png',
-                                        attribution: 'Panden',
-                                        transparent: true
                                     })
+                                    
                                 };
-                                L.control.layers(basemaps).addTo(map);
+                                L.control.layers(basemaps,null,{collapsed:false}).addTo(map);
+
+                                basemaps.Nederland.addTo(map);
 
                                 L.control.locate().addTo(map);
 
@@ -167,73 +177,66 @@
                             <script src="js/fullScreen.js"></script>
                             <!-- Eind van Leaflet map selector gedeelte -->
 
+                            <div class="row mt-4">
+
+                                <div class="col-lg-12">
+                                    <h5 class="">Uw huidige selectie:</h5><p class="kb" id="demo"></p>
+                                </div>
+                                
+                                <script>
+                                function myFunction() {
+                                    var item = localStorage.getItem("test");
+
+                                    document.getElementById("demo").innerHTML = item;
+                                }
+                            </script>
+
+                            
+
+                            <div class="col-lg-12">
+                                <button class="btn btn-primary" onclick="storeTable()">Toevoegen</button>
+                            </div>
+
+                            </div>
+
+                            <script>
+
+                              function storeTable() {
+                                var test = document.getElementById("demo");
+                                console.log(test);
+                              }
+
+                            </script>
+
+                            <h5 class="">Hieronder is uw totaalselectie te zien: <small></small></h5>
                             <div class="mt-4">
                             <table id="example" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>Selectie</th>
                                         <th>Soort</th>
-                                        <th>Databronnen</th>
                                         <th>Acties</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Overijssel</td>
-                                        <td>Provincies</td>
-                                        <td>
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                              <option>Hypotheekregister</option>
-                                              <option>LISA-register</option>
-                                              <option>BAG</option>
-                                              <option>BRT</option>
-                                              <option>CBS</option>
-                                            </select>
-                                          </td>
-                                        <td><button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>PandID: 21312</td>
-                                        <td>Pand</td>
-                                        <td>
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                              <option>Hypotheekregister</option>
-                                              <option>LISA-register</option>
-                                              <option>BAG</option>
-                                              <option>BRT</option>
-                                              <option>CBS</option>
-                                            </select>
-                                          </td>
-                                        <td><button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Zwolle</td>
-                                        <td>Gemeente</td>
-                                        <td>
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                              <option>Hypotheekregister</option>
-                                              <option>LISA-register</option>
-                                              <option>BAG</option>
-                                              <option>BRT</option>
-                                              <option>CBS</option>
-                                            </select>
-                                          </td>
-                                        <td>
-                                            <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button>
+                                        <td>1</td>
+                                        <td>Ittersumerlanden</td>
+                                        <td>CBS buurt</td>
+                                        <td class="text-center">
+                                          <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button>
+                                          <button type="button" class="btn btn-secondary"><i class="fas fa-info-circle"></i></button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Ittersumerlanden</td>
-                                        <td>CBS buurt</td>
-                                        <td><select class="form-control" id="exampleFormControlSelect1">
-                                              <option>Hypotheekregister</option>
-                                              <option>LISA-register</option>
-                                              <option>BAG</option>
-                                              <option>BRT</option>
-                                              <option>CBS</option>
-                                            </select>
-                                          </td>
-                                        <td><button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button></td>
+                                        <td>2</td>
+                                        <td>Zwolle</td>
+                                        <td>Gemeente</td>
+                                        <td class="text-center">
+                                          <button type="button" class="btn btn-danger"><i class="fas fa-times"></i></button>
+                                          <button type="button" class="btn btn-secondary"><i class="fas fa-info-circle"></i></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                                 
@@ -253,140 +256,222 @@
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col-lg-3">
-                            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <div class="col-lg-4">
+                            <div class="alert alert-info alert-dismissible fade show box-selector" role="alert">
                                 <div class="mt-5">
-                                <h5>Hypotheekinformatie</h5>
-                                <p><strong>Locatie:</strong> buurt Ittersumerlanden<br></p>
-                                <input class="form-control" type="text" placeholder="CBS wijkenbuurten2017" readonly data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+                                <h5><i class="fas fa-search"></i> Selectie 1</h5>
+                                <hr>
+                                <p><i class="fas fa-tags"></i> <strong>Niveau:</strong> buurt</p>
+                                <p><i class="far fa-compass"></i> <strong>Selectie:</strong> Ittersumerlanden</p>
+                                <div class="form-group">
+                                  <label for="exampleFormControlSelect1"><i class="fas fa-database"></i> Selecteer datasets:</label>
+                                  <select multiple class="form-control" id="exampleFormControlSelect1">
+                                    <option>BAG</option>
+                                    <option>Hypotheekinformatie</option>
+                                    <option>Koopsominformatie</option>
+                                    <option>LISA-register</option>
+                                  </select>
+                                </div>
+                                <button type="button" class="btn-block btn-secondary close" data-dismiss="alert" aria-label="Close">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                                <p><i class="far fa-calendar-alt"></i> Selecteer datumbereik:</p>
+                                <div id="slider"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="alert alert-info alert-dismissible fade show box-selector" role="alert">
+                                <div class="mt-5">
+                                <h5><i class="fas fa-search"></i> Selectie 2</h5>
+                                <hr>
+                                <p><i class="fas fa-tags"></i> <strong>Niveau:</strong> woonplaats</p>
+                                <p><i class="far fa-compass"></i> <strong>Selectie:</strong> Zwolle</p>
+                                <div class="form-group">
+                                  <label for="exampleFormControlSelect1"><i class="fas fa-database"></i> Selecteer datasets:</label>
+                                  <select multiple class="form-control" id="exampleFormControlSelect1">
+                                    <option>BAG</option>
+                                    <option>Hypotheekinformatie</option>
+                                    <option>Koopsominformatie</option>
+                                    <option>LISA-register</option>
+                                  </select>
+                                </div>
                                 <button type="button" class="btn-block btn-secondary close" data-dismiss="alert" aria-label="Close">
                                     <i class="fas fa-times"></i>
                                 </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                <div class="mt-5">
-                                <h5>Hypotheekinformatie</h5>
-                                <p><strong>Locatie:</strong> buurt Ittersumerlanden<br></p>
-                                <input class="form-control" type="text" placeholder="CBS wijkenbuurten2017" readonly data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                                <button type="button" class="btn-block btn-secondary close" data-dismiss="alert" aria-label="Close">
-                                    <i class="fas fa-times"></i>
-                                </button>
+                        <div class="col-lg-4">
+                            <a style="display:block; text-decoration: none;" href="shop.html#step-1">
+                            <div class="alert alert-info alert-dismissible fade show box-selector" role="alert">
+                                <div class="text-center">
+                                <p><small>Voeg een nieuwe selectie toe</small></p>
+                                <i class="fas fa-2x fa-plus"></i>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                <div class="mt-5">
-                                <h5>Hypotheekinformatie</h5>
-                                <p><strong>Locatie:</strong> buurt Ittersumerlanden<br></p>
-                                <input class="form-control" type="text" placeholder="CBS wijkenbuurten2017" readonly data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                                <button type="button" class="btn-block btn-secondary close" data-dismiss="alert" aria-label="Close">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                <div class="mt-5">
-                                <h5>Hypotheekinformatie</h5>
-                                <p><strong>Locatie:</strong> buurt Ittersumerlanden<br></p>
-                                <input class="form-control" type="text" placeholder="CBS wijkenbuurten2017" readonly data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                                <button type="button" class="btn-block btn-secondary close" data-dismiss="alert" aria-label="Close">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
-
-
+                    <h5>Selectie 1:</h5>
+                    
+                        <table id="zwolle" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th><i class="fas fa-database"></i> Hypotheekinformatie</th>
+                                    <td><i class="fas fa-euro-sign"></i> Koopsom</td>
+                                    <td><i class="fas fa-home"></i> Woningtype</td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <h5>Selectie 2:</h5>
+                    
+                        <table id="zwolle" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td><i class="fas fa-euro-sign"></i> Ingeschreven bedrag</td>
+                                    <td><i class="fas fa-home"></i> Woningtype</td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table id="zwolle" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td><i class="fas fa-briefcase"></i> Banen totaal</td>
+                                    <td><i class="fas fa-building"></i> Vestigingen totaal</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    
                    
                 </div>
                 <div id="step-3" class="">
                     <h3 class="border-bottom border-gray mt-4">3. Maak berekeningen en accepteer de voorwaarden</h3>
                     <p>De volgende berekeningen wil ik uitvoeren per selectie...</p>
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-12">
                             <div class="alert alert-info" role="alert">
-                                <div class="">
-                                <h5>Hypotheekinformatie</h5>
-                                <p><strong>Locatie:</strong> buurt Ittersumerlanden<br></p>
-                                <input class="form-control" type="text" placeholder="CBS wijkenbuurten2017" readonly data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+                              <div class="row">
+                                <div class="col-lg-3">
+                                <h5><i class="fas fa-search"></i> Selectie 1</h5>
+                                <hr>
+                                <p><i class="fas fa-tags"></i> <strong>Niveau:</strong> buurt</p>
+                                <p><i class="far fa-compass"></i> <strong>Selectie:</strong> Ittersumerlanden</p>
+                                <p><i class="fas fa-database"></i> <strong>Dataset(s):</strong></p>
+                                <small>BAG,</small>
+                                    <small>Hypotheekinformatie,</small>
+                                    <small>Koopsominformatie,</small>
+                                    <small>LISA-register</small>
                                 </div>
+                                <div class="col-lg-6">
+                                    <h5><i class="fas fa-search"></i> Voeg berekeningen toe...</h5>
+                                    <hr>
+                                  <table class="table table-sm">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">#</th>
+                                          <th scope="col">First</th>
+                                          <th scope="col">Last</th>
+                                          <th scope="col">Handle</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <th scope="row">BAG</th>
+                                          <td>Mark</td>
+                                          <td>Otto</td>
+                                          <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">Hypoteekinformatie</th>
+                                          <td>Jacob</td>
+                                          <td>Thornton</td>
+                                          <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">Koopsominformatie</th>
+                                          <td colspan="2">Larry the Bird</td>
+                                          <td>@twitter</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-3">
+                                  <h5><i class="fas fa-plus-square"></i> Open data toevoegen</h5>
+                                  <hr>
+                                  <div class="form-group">
+                                    <label for="exampleFormControlSelect2">Selecteer indien gewenst:</label>
+                                    <select multiple class="form-control" id="exampleFormControlSelect2">
+                                      <option>CBS Wijk- en buurtdataset</option>
+                                      <option>BRT Algemene gegevens</option>
+                                      <option>BGT Algemene gegevens</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                         </div>
-                        <div class="col-lg-5">
-                            <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value=""> Het gemiddelde uitrekenen
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value=""> Een regressie maken
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value=""> Het mediaan uitrekenen
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value=""> Overige gegevens
-                        </label>
-                    </div>
                         </div>
-                        </div>
-
-                        <hr>
-
                         <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-12">
                             <div class="alert alert-info" role="alert">
-                                <div class="">
-                                <h5>Hypotheekinformatie</h5>
-                                <p><strong>Locatie:</strong> buurt Ittersumerlanden<br></p>
-                                <input class="form-control" type="text" placeholder="CBS wijkenbuurten2017" readonly data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+                              <div class="row">
+                                <div class="col-lg-3">
+                                <h5><i class="fas fa-search"></i> Selectie 2</h5>
+                                <hr>
+                                <p><i class="fas fa-tags"></i> <strong>Niveau:</strong> woonplaats</p>
+                                <p><i class="far fa-compass"></i> <strong>Selectie:</strong> Zwolle</p>
+                                <p><i class="fas fa-database"></i> <strong>Dataset(s):</strong></p>
+                                    <small>BAG,</small>
+                                    <small>Hypotheekinformatie,</small>
+                                    <small>Koopsominformatie,</small>
+                                    <small>LISA-register</small>
                                 </div>
+                                <div class="col-lg-3">
+                                  <h5><i class="fas fa-calculator"></i> Berekeningen</h5>
+                                <hr>
+                                  <div class="form-check">
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value=""> Het gemiddelde
+                                      </label>
+                                  </div>
+                                  <div class="form-check">
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value=""> Een regressie
+                                      </label>
+                                  </div>
+                                  <div class="form-check">
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value=""> Het mediaan
+                                      </label>
+                                  </div>
+                                  <div class="form-check">
+                                      <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" value="" disabled="true"> Alles weergeven
+                                      </label>
+                                  </div>
+                                </div>
+                                <div class="col-lg-3">
+                                  <h5><i class="fas fa-plus-square"></i> Open data toevoegen</h5>
+                                  <hr>
+                                  <div class="form-group">
+                                    <label for="exampleFormControlSelect2">Selecteer indien gewenst:</label>
+                                    <select multiple class="form-control" id="exampleFormControlSelect2">
+                                      <option>CBS Wijk- en buurtdataset</option>
+                                      <option>BRT Algemene gegevens</option>
+                                      <option>BGT Algemene gegevens</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                         </div>
                         </div>
-
-                        
-                        
-                        <div class="row">
-                        <div class="col-lg-3">
-                            <div class="alert alert-info" role="alert">
-                                <div class="">
-                                <h5>Hypotheekinformatie</h5>
-                                <p><strong>Locatie:</strong> buurt Ittersumerlanden<br></p>
-                                <input class="form-control" type="text" placeholder="CBS wijkenbuurten2017" readonly data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="row">
-                        <div class="col-lg-3">
-                            <div class="alert alert-info" role="alert">
-                                <div class="">
-                                <h5>Hypotheekinformatie</h5>
-                                <p><strong>Locatie:</strong> buurt Ittersumerlanden<br></p>
-                                <input class="form-control" type="text" placeholder="CBS wijkenbuurten2017" readonly data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
+           
                     <hr>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value=""> Ik ga akkoord met de voorwaarden
+                            <input class="form-check-input" type="checkbox" value="true"> Ik accepteer de <a class="" href="" data-toggle="modal" data-target="#voorwaardenModalCenter">algemene voorwaarden</a> (verplicht)
                         </label>
                     </div>
                 </div>
@@ -410,7 +495,7 @@
                         <div class="media">
                             <h4 class="thumbnail pull-left" href="#"> <i class="fas fa-database"></i></h4>
                             <div class="media-body ml-2">
-                                <h4 class="media-heading"><a href="#">Hypotheekregister</a></h4>
+                                <h4 class="media-heading"><a href="#">Selectie 1</a></h4>
                                 <h5 class="media-heading"> bron: <a href="#">Kadaster</a></h5>
                                 <span>Gebied/bereik: </span><span class="text-success"><strong>Apeldoorn</strong></span>
                             </div>
@@ -430,7 +515,7 @@
                         <div class="media">
                             <h4 class="thumbnail pull-left" href="#"> <i class="fas fa-database"></i></h4>
                             <div class="media-body ml-2">
-                                <h4 class="media-heading"><a href="#">LISA-Register</a></h4>
+                                <h4 class="media-heading"><a href="#">Selectie 2</a></h4>
                                 <h5 class="media-heading"> bron: <a href="#">Stichting Lisa</a></h5>
                                 <span>Gebied/bereik: </span><span class="text-warning"><strong>PandID: 231211</strong></span>
                             </div>
@@ -465,59 +550,56 @@
 
             <div id="accordion">
   <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-        <i class="fab fa-cc-mastercard"></i> Mastercard - snel en eenvoudig betalen
-        </button>
-      </h2>
+    <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+      <div class="paymentCardHeader"><img src="img/mc_hrz_pos.png" style="max-height: 50px;"></div>
     </div>
-
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
         <div class="col-xs-12 col-md-12">
-        
-        
-            <!-- CREDIT CARD FORM STARTS HERE -->
-            <div class="panel panel-default credit-card-box">
-                <div class="panel-body">
-                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="cardNumber">CARD NUMBER</label>
-                                    <div class="input-group">
-                                        <input 
+          <!-- CREDIT CARD FORM STARTS HERE -->
+          <div class="panel panel-default credit-card-box">
+            <div class="panel-body">
+              <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="cardNumber">Kaartnummer</label>
+                      <div class="input-group">
+                        <input 
                                             type="tel"
                                             class="form-control"
                                             name="cardNumber"
-                                            placeholder="Valid Card Number"
+                                            placeholder="Voer een geldig kaartnummer in"
                                             autocomplete="cc-number"
                                             required autofocus 
                                         />
-                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-7 col-md-7">
-                                <div class="form-group">
-                                    <label for="cardExpiry"><span class="visible-xs-inline">EXP</span> DATE</label>
-                                    <input 
+                        <span class="input-group-addon">
+                          <i class="fa fa-credit-card"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-7 col-md-7">
+                    <div class="form-group">
+                      <label for="cardExpiry">
+                        <span class="visible-xs-inline">Verloopdatum</span>
+                      </label>
+                      <input 
                                         type="tel" 
                                         class="form-control" 
                                         name="cardExpiry"
-                                        placeholder="MM / YY"
+                                        placeholder="MM / JJJJ"
                                         autocomplete="cc-exp"
                                         required 
                                     />
-                                </div>
-                            </div>
-                            <div class="col-xs-5 col-md-5 pull-right">
-                                <div class="form-group">
-                                    <label for="cardCVC">CV CODE</label>
-                                    <input 
+                    </div>
+                  </div>
+                  <div class="col-xs-5 col-md-5 pull-right">
+                    <div class="form-group">
+                      <label for="cardCVC">CV Code</label>
+                      <input 
                                         type="tel" 
                                         class="form-control"
                                         name="cardCVC"
@@ -525,54 +607,160 @@
                                         autocomplete="cc-csc"
                                         required
                                     />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <button class="subscribe btn btn-success btn-lg" type="button">Controleren</button>
-                            </div>
-                        </div>
-                        <div class="row" style="display:none;">
-                            <div class="col-xs-12">
-                                <p class="payment-errors"></p>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                  </div>
                 </div>
-            </div>            
-            <!-- CREDIT CARD FORM ENDS HERE -->
-            
-            
-        </div>            
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button class="subscribe btn btn-primary btn-lg" type="button">Betalen</button>
+                  </div>
+                </div>
+                <div class="row" style="display:none;">
+                  <div class="col-xs-12">
+                    <p class="payment-errors"></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- CREDIT CARD FORM ENDS HERE -->
+        </div>
       </div>
     </div>
   </div>
   <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          <i class="fab fa-cc-visa"></i> Visa card - snel en eenvoudig betalen
-        </button>
-      </h2>
+    <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <div class="paymentCardHeader"><img src="img/visa_pos_fc.png" style="max-height: 50px;"></div>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <div class="col-xs-12 col-md-12">
+          <!-- CREDIT CARD FORM STARTS HERE -->
+          <div class="panel panel-default credit-card-box">
+            <div class="panel-body">
+              <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label for="cardNumber">Kaartnummer</label>
+                      <div class="input-group">
+                        <input 
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardNumber"
+                                            placeholder="Voer een geldig kaartnummer in"
+                                            autocomplete="cc-number"
+                                            required autofocus 
+                                        />
+                        <span class="input-group-addon">
+                          <i class="fa fa-credit-card"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-7 col-md-7">
+                    <div class="form-group">
+                      <label for="cardExpiry">
+                        <span class="visible-xs-inline">Verloopdatum</span>
+                      </label>
+                      <input 
+                                        type="tel" 
+                                        class="form-control" 
+                                        name="cardExpiry"
+                                        placeholder="MM / JJJJ"
+                                        autocomplete="cc-exp"
+                                        required 
+                                    />
+                    </div>
+                  </div>
+                  <div class="col-xs-5 col-md-5 pull-right">
+                    <div class="form-group">
+                      <label for="cardCVC">CV Code</label>
+                      <input 
+                                        type="tel" 
+                                        class="form-control"
+                                        name="cardCVC"
+                                        placeholder="CVC"
+                                        autocomplete="cc-csc"
+                                        required
+                                    />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button class="subscribe btn btn-primary btn-lg" type="button">Betalen</button>
+                  </div>
+                </div>
+                <div class="row" style="display:none;">
+                  <div class="col-xs-12">
+                    <p class="payment-errors"></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- CREDIT CARD FORM ENDS HERE -->
+        </div>
       </div>
     </div>
   </div>
   <div class="card">
-    <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
-        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          <i class="fab fa-cc-paypal"></i> iDEAL - Online betalen via uw Nederlandse Bank
-        </button>
-      </h2>
+    <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <div class="paymentCardHeader"><img src="img/iDEAL.png" style="max-height: 50px;"></div>
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <div class="col-xs-12 col-md-12">
+          <div _ngcontent-c15="" class="ideal-choose-bank">
+            <div _ngcontent-c15="">
+              <label _ngcontent-c15="" for="select-bank">
+              Selecteer uw bank
+            </label>
+              <select _ngcontent-c15="" class="form-control ng-pristine ng-valid ng-touched" formcontrolname="issuer" id="select-bank" name="issuer">
+                <option _ngcontent-c15="" disabled="" selected="" value="">
+                Kies uw bank...
+              </option>
+                <optgroup _ngcontent-c15="" label="Nederland">
+                  <!---->
+                  <option _ngcontent-c15="" value="ABNANL2A">
+                  ABN AMRO
+                </option>
+                  <option _ngcontent-c15="" value="ASNBNL21">
+                  ASN Bank
+                </option>
+                  <option _ngcontent-c15="" value="INGBNL2A">
+                  ING
+                </option>
+                  <option _ngcontent-c15="" value="RABONL2U">
+                  Rabobank
+                </option>
+                  <option _ngcontent-c15="" value="SNSBNL2A">
+                  SNS Bank
+                </option>
+                  <option _ngcontent-c15="" value="RBRBNL21">
+                  RegioBank
+                </option>
+                  <option _ngcontent-c15="" value="TRIONL2U">
+                  Triodos Bank
+                </option>
+                  <option _ngcontent-c15="" value="FVLBNL22">
+                  Van Lanschot
+                </option>
+                  <option _ngcontent-c15="" value="KNABNL2H">
+                  Knab bank
+                </option>
+                  <option _ngcontent-c15="" value="BUNQNL2A">
+                  Bunq bank
+                </option>
+                </optgroup>
+              </select>
+              <button class="subscribe btn btn-primary btn-lg mt-4" type="button">Betalen</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -581,25 +769,36 @@
                 </div>
                 <div id="step-5" class="">
                     <h3 class="border-bottom border-gray mt-4">5. Downloaden</h3>
+                    <p>Dankuwel voor de aanschaf van onderstaande producten, uw producten zijn hieronder te downloaden.</p> <p>Uw transacties zijn vanaf nu te vinden in uw account, daar kunt u onderstaande producten opnieuw downloaden.</p>
                     <div class="card">
-                        <div class="card-header">Mijn product(en)</div>
                         <div class="card-block">
                             <table class="table">
+                                <thead>
+                                    <tr>
+                                      <th scope="col">Naam</th>
+                                      <th scope="col">Bestandsformaten</th>
+                                      <th scope="col">Aangemaakt op</th>
+                                      <th scope="col"></th>
+                                    </tr>
+                                  </thead>
                                 <tbody>
                                     <tr>
-                                        <th><i class="fas fa-database"></i> Rapport (1)</th>
+                                        <th><i class="fas fa-flag-checkered"></i> Rapport van selectie #1</th>
                                         <td><i class="fas fa-file-excel"></i> CSV</td>
-                                        <td><button type="button" class="btn btn-success btn-block"><i class="fas fa-download"></i> Download</button></td>
+                                        <td><i class="far fa-calendar-alt"></i> 16-4-2018</td>
+                                        <td><button type="button" class="btn btn-primary btn-block"><i class="fas fa-download"></i> Download</button></td>
                                     </tr>
                                     <tr>
-                                        <th><i class="fas fa-database"></i> Rapport (2)</th>
+                                        <th><i class="fas fa-flag-checkered"></i> Rapport van selectie #2</th>
                                         <td><i class="fas fa-file-excel"></i> CSV</td>
-                                        <td><button type="button" class="btn btn-success btn-block"><i class="fas fa-download"></i> Download</button></td>
+                                        <td><i class="far fa-calendar-alt"></i> 16-4-2018</td>
+                                        <td><button type="button" class="btn btn-primary btn-block"><i class="fas fa-download"></i> Download</button></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                    <p>Hulp nodig bij het downloaden of heeft u een vraag? Klik dan op het vraagtekentje rechtsboven.</p>
                 </div>
             </div>
         </div>
@@ -612,7 +811,7 @@
     </div>
     </div>
     </div>
-    <!-- Disclaimer Modal -->
+                                    <!-- Disclaimer Modal -->
                                     <div class="modal fade" id="disclaimerModalCenter" tabindex="-1" role="dialog" aria-labelledby="disclaimerModalCenterTitle" aria-hidden="true">
                                       <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -639,8 +838,173 @@
                                         </div>
                                       </div>
                                     </div>
+                                    <!-- Voorwaarden modal -->
+                                    <div class="modal fade" id="voorwaardenModalCenter" tabindex="-1" role="dialog" aria-labelledby="voorwaardenModalCenterTitle" aria-hidden="true">
+                                      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="voorwaardenModalLongTitle"><i class="fas fa-balance-scale"></i>Algemene voorwaarden</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                          <div class="modal-body">
+                                              <div _ngcontent-c16=""><p><strong>Voorwaarden webwinkel Kadaster </strong></p>
 
-                                        <footer class="footer bg-light">
+                                                    <p>Apeldoorn, januari 2017</p>
+
+                                                    <p><strong>Artikel 1. Definities</strong></p>
+
+                                                    <p>a.&nbsp;Kadaster: de rechtspersoonlijkheid bezittende Dienst voor het kadaster en de openbare registers, bedoeld in artikel 2 Organisatiewet Kadaster.<br>
+                                                    b.&nbsp;producten: in de webwinkel van het Kadaster omschreven producten, informatie, gegevens of dataset.<br>
+                                                    c.&nbsp;afnemer: natuurlijke of rechtspersoon die producten via de webwinkel van het Kadaster afneemt en/of (her)gebruikt.<br>
+                                                    d.&nbsp;consument: een afnemer die een natuurlijk persoon is en niet handelt in de uitoefening van een beroep of bedrijf;<br>
+                                                    e.&nbsp;webwinkel: het onderdeel van de website van het Kadaster waarin producten via het internet kunnen worden aangeschaft.<br>
+                                                    &nbsp;</p>
+
+                                                    <p><strong>Artikel 2. Toepasselijkheid</strong></p>
+
+                                                    <ol>
+                                                      <li>Deze voorwaarden zijn van toepassing op alle overeenkomsten, opdrachten en/of leveringen van producten met en door het Kadaster die via de webwinkel plaatsvinden.</li>
+                                                      <li>De toepasselijkheid van inkoop- of andere voorwaarden van afnemer wordt uitdrukkelijk afgewezen.</li>
+                                                      <li>Indien enige bepaling van deze voorwaarden nietig is of vernietigd wordt, blijven de overige bepalingen van deze voorwaarden volledig van kracht. Afnemer en het Kadaster treden dan in overleg teneinde nieuwe bepalingen ter vervanging van de nietige dan wel vernietigde bepalingen overeen te komen, waarbij zoveel mogelijk het doel en de strekking van de nietige dan wel vernietigde bepaling in acht worden genomen.</li>
+                                                      <li>Het Kadaster heeft het recht deze algemene voorwaarden te wijzigen. De wijzigingen treden in werking vanaf het moment van schriftelijke of digitale bekendmaking of op een zodanige datum als genoemd in de bekendmaking.</li>
+                                                    </ol>
+
+                                                    <p><strong>Artikel 3. Opdrachtverstrekking</strong></p>
+
+                                                    <ol>
+                                                      <li>Een opdracht aan het Kadaster tot levering van een product dient via internet plaats te vinden.</li>
+                                                      <li>Het Kadaster is eerst gehouden een opdracht en/of bestelling uit te voeren indien en nadat hij een door afnemer via internet verstuurd aanvraagformulier, alsmede (elektronische) betaling van het door afnemer verschuldigde bedrag heeft ontvangen.</li>
+                                                      <li>Het Kadaster behoudt zich het recht voor om, om zijn moverende redenen, opdrachten en bestellingen te weigeren, onderscheidenlijk het gevraagde product niet te leveren.</li>
+                                                      <li>Afnemer is niet gerechtigd een via elektronische weg gesloten overeenkomst met het Kadaster te ontbinden indien het Kadaster de ontvangst van de aanvaarding door afnemer van een door het Kadaster gedaan aanbod niet elektronisch heeft bevestigd. Een via elektronische weg door afnemer gedaan aanbod naar aanleiding van een uitnodiging tot het doen van een aanbod van het Kadaster geldt niet als verworpen indien het Kadaster de ontvangst van dit aanbod niet elektronisch heeft bevestigd. Het bepaalde in dit lid geldt niet indien afnemer consument is.</li>
+                                                      <li>Afnemer stemt ermee in dat het Kadaster digitaal met hem en met derden communiceert.</li>
+                                                    </ol>
+
+                                                    <p><strong>Artikel 4. Levering en acceptatie</strong></p>
+
+                                                    <ol>
+                                                      <li>De levering van producten geschiedt via e-mail of digitaal door het tonen van het product op het beeldscherm van afnemer.</li>
+                                                      <li>Het Kadaster draagt zorg voor digitale verzending van producten naar het door afnemer opgegeven afleveringsadres.</li>
+                                                      <li>Alle door het Kadaster genoemde (leverings)termijnen zijn naar beste weten vastgesteld op grond van de gegevens die bij de opdrachtverstrekking aan het Kadaster bekend waren en worden zoveel mogelijk in acht genomen. De (leverings)termijnen zijn geen fatale termijnen. De enkele overschrijding van een genoemde (leverings)termijn brengt het Kadaster niet in verzuim. Het Kadaster zal, in geval van afwijking van de genoemde (leverings)termijnen, overleg plegen met afnemer.</li>
+                                                      <li>Het geleverde product geldt als door afnemer aanvaard, tenzij deze binnen tien werkdagen na de levering schriftelijk bij het Kadaster heeft gereclameerd, dan wel binnen tien werkdagen na de ontdekking van het gebrek, indien afnemer aantoont dat hij het gebrek redelijkerwijs niet eerder kon ontdekken. Indien een gebrek aan het Kadaster is toe te rekenen is het Kadaster slechts gehouden tot het onverwijld op zijn kosten ter beschikking stellen van een niet-gebrekkig product.</li>
+                                                      <li>Het Kadaster zal de overeenkomst, die moet worden gezien als een inspanningsverbintenis, naar beste inzicht en vermogen en overeenkomstig de eisen van goed vakmanschap uitvoeren. Het Kadaster staat niet in voor het bereiken van het beoogde resultaat.</li>
+                                                      <li>Het Kadaster heeft het recht de overeenkomst of een gedeelte daarvan te laten uitvoeren door door hem aan te wijzen personen, waaronder ook derden worden begrepen. De toepasselijkheid van de artikelen 7:404 en 7:407 lid 2 BW wordt uitgesloten.</li>
+                                                      <li>Bij de overeengekomen dienstverlening kan het Kadaster, naast zijn eigen gegevens, ook gegevens van derden gebruiken voor het beoogde resultaat. De verschillende gegevens kunnen variëren in betrouwbaarheid. Het Kadaster zal afnemer zoveel mogelijk vooraf informeren over de mate van betrouwbaarheid van de gebruikte gegevens.</li>
+                                                      <li>Het Kadaster is niet aansprakelijk voor schade, van welke aard ook, ontstaan doordat hij is uitgegaan van door afnemer verstrekte onjuiste en/of onvolledige gegevens. Afnemer zal het Kadaster vrijwaren voor aanspraken van derden terzake.</li>
+                                                    </ol>
+
+                                                    <p><strong>Artikel 5. Tarieven en betaling</strong></p>
+
+                                                    <ol>
+                                                      <li>Door het Kadaster berekende tarieven zijn steeds in Euro's en hierover wordt geen omzetbelasting (BTW) en/of andere heffingen van overheidswege geheven. De tarieven worden vastgesteld overeenkomstig de Tarievenregeling Kadaster (te raadplegen via www.kadaster.nl). Die regeling bepaalt ook het tijdstip waarop gewijzigde tarieven ingaan.</li>
+                                                      <li>Betaling van producten vindt plaats overeenkomstig de door het Kadaster aangegeven wijze en binnen 21 dagen na factuurdatum, tenzij een andere betalingstermijn is overeengekomen.</li>
+                                                      <li>In afwijking van het tweede lid, dienen producten die direct digitaal geleverd worden vooraf elektronisch betaald te worden, op de wijze als omschreven op de website van het Kadaster.</li>
+                                                      <li>Indien afnemer de verschuldigde bedragen niet binnen de betalingstermijn betaalt, is afnemer, zonder dat enige ingebrekestelling nodig is, in verzuim en over het openstaande bedrag vertragingsrente gelijk aan de in de onderlinge verhouding tussen het Kadaster en afnemer geldende wettelijke rente verschuldigd. Indien afnemer na ingebrekestelling nalatig blijft de vordering te voldoen, kan de vordering uit handen worden gegeven. Afnemer is dan tevens gehouden tot volledige vergoeding van de in redelijkheid gemaakte buitengerechtelijke en (indien een gerechtelijke- of arbitrageprocedure wordt gevoerd en een rechterlijke- of arbitrale uitspraak in kracht van gewijsde gaat waarbij afnemer volledig of in overwegende mate in het ongelijk wordt gesteld) gerechtelijke of arbitrale kosten. De buitengerechtelijke kosten bedragen minimaal 10% van het openstaande bedrag.</li>
+                                                      <li>Betaling dient plaats te vinden zonder korting of verrekening.</li>
+                                                      <li>Door afnemer gedane betalingen strekken steeds ter afdoening in de eerste plaats van alle verschuldigde rente en kosten, en in de tweede plaats van opeisbare facturen die het langst open staan, zelfs al vermeldt afnemer dat de voldoening betrekking heeft op een latere factuur.</li>
+                                                      <li>Door het Kadaster kan worden verlangd dat, ten genoegen van het Kadaster, zekerheid wordt gesteld voor betaling.</li>
+                                                    </ol>
+
+                                                    <p><strong>Artikel 6. Gebruiksrecht</strong></p>
+
+                                                    <ol>
+                                                      <li>Het Kadaster verleent aan afnemer een niet exclusief en een niet overdraagbaar gebruiksrecht met betrekking tot de verstrekte producten.</li>
+                                                      <li>De verstrekte producten mogen door afnemer slechts worden gebruikt en verwerkt voor het doel zoals genoemd in de Kadasterwet.</li>
+                                                      <li>Door het Kadaster verstrekte persoonsgegevens mogen door afnemer niet worden gebruikt in afgeleide producten of diensten die een commercieel (op winst gericht) oogmerk hebben.</li>
+                                                      <li>Afnemer mag het product slechts verveelvoudigen voor gebruik binnen de eigen applicatie en ten behoeve van back up en beveiligingsdoeleinden.</li>
+                                                      <li>Afnemer mag zich zonder toestemming van het Kadaster niet voordoen als intermediair van het Kadaster, dan wel de schijn wekken dat hij voor of namens het Kadaster handelt waardoor verwarring bij het publiek kan ontstaan, bijvoorbeeld door overname van (onderdelen van) de door het Kadaster gevoerde huisstijl.</li>
+                                                    </ol>
+
+                                                    <p><strong>Artikel 7. Persoonsgegevens</strong></p>
+
+                                                    <ol>
+                                                      <li>Persoonsgegevens als bedoeld in de Wet Bescherming Persoonsgegevens worden door het Kadaster verwerkt voor de doeleinden zoals genoemd in de Kadasterwet. Verwerking van persoonsgegevens door afnemer dient verenigbaar te zijn met deze doeleinden en overigens rechtmatig te zijn.</li>
+                                                      <li>Van onrechtmatige verwerking door afnemer is in ieder geval sprake wanneer de verstrekte gegevens worden gebruikt voor direct-marketing activiteiten. Onder direct-marketing wordt in elk geval begrepen direct-mail en telemarketing.</li>
+                                                    </ol>
+
+                                                    <p><strong>Artikel 8. Intellectuele eigendom</strong></p>
+
+                                                    <ol>
+                                                      <li>Alle intellectuele- en industriële eigendomsrechten waaronder het Auteursrecht en het Databankenrecht, met betrekking tot de te leveren producten, diensten en/of de websites van het Kadaster berusten bij het Kadaster, tenzij schriftelijk anders overeengekomen.</li>
+                                                      <li>Vermeldingen van de intellectuele- en industriële eigendomsrechten en van de naam, handelsnaam ‘kadaster’ of (beeld)merk(en) van het Kadaster mogen zonder voorafgaande toestemming van het Kadaster niet worden gebruikt op welke wijze dan ook.</li>
+                                                      <li>Afnemer zal het Kadaster onverwijld op de hoogte stellen van enige aanspraak van derden terzake van een gestelde inbreuk op een (eigendoms)recht, waaronder begrepen intellectuele- en industriële eigendomsrechten, met betrekking tot de door het Kadaster aan afnemer geleverde producten.</li>
+                                                      <li>Afnemer zal desgevraagd aan het Kadaster om niet alle medewerking verlenen ten behoeve van tegen derden te nemen maatregelen ter handhaving en verdediging van de intellectuele- en industriële eigendomsrechten.</li>
+                                                    </ol>
+
+                                                    <p><strong>Artikel 9. Aansprakelijkheid</strong></p>
+
+                                                    <ol>
+                                                      <li>Indien één der partijen tekortschiet in de nakoming van één of meer van zijn verplichtingen, zal de andere partij hem deswege in gebreke stellen, tenzij nakoming van de betreffende verplichting(en) reeds blijvend onmogelijk is, in welk geval de nalatige partij onmiddellijk in gebreke is. De ingebrekestelling zal schriftelijk geschieden, waarbij aan de nalatige partij een redelijke termijn zal worden gegund om alsnog zijn verplichtingen na te komen. Deze termijn heeft het karakter van een fatale termijn.</li>
+                                                      <li>Onverminderd het overigens in dit artikel bepaalde geldt dat het Kadaster jegens afnemer slechts aansprakelijk is voor schade die het rechtstreekse gevolg is van een aan het Kadaster toe te rekenen tekortkoming in de nakoming van zijn verplichtingen uit de overeenkomst en indien en voor zover de schade bij normale vakkennis en ervaring en met inachtneming van normale oplettendheid en een redelijke wijze van beroepsuitoefening had kunnen worden vermeden.</li>
+                                                      <li>Indien het Kadaster aansprakelijk is, is zijn aansprakelijkheid, voor zover deze door zijn aansprakelijkheidsverzekering wordt gedekt, beperkt tot het bedrag van de door de verzekeraar gedane uitkering.</li>
+                                                      <li>Indien de verzekeraar van het Kadaster in enig geval niet tot uitkering overgaat, of de schade niet door de verzekering wordt gedekt, is de aansprakelijkheid van het Kadaster beperkt tot tien keer het door het Kadaster aan afnemer in het kader van de overeenkomst in rekening gebrachte bedrag.</li>
+                                                      <li>Bij het inschakelen door het Kadaster van derden en bij het gebruik door het Kadaster van apparatuur, software, gegevensbestanden, registers of andere zaken, zal het Kadaster steeds de nodige zorgvuldigheid in acht nemen. Het Kadaster is echter voor eventuele tekortkomingen van deze derden of voor het niet deugdelijke functioneren van door het Kadaster bij de uitvoering van de overeenkomst gebruikte apparatuur, software, gegevensbestanden, registers of andere zaken, niet aansprakelijk.</li>
+                                                      <li>Indien een beroep van het Kadaster op het bepaalde in lid 5 van dit artikel in rechte niet wordt gehonoreerd, geldt in ieder geval de aansprakelijkheidsbeperking als omschreven in lid 2, 3, 4 en 7 van dit artikel.</li>
+                                                      <li>Het Kadaster is niet aansprakelijk voor gevolgschade, zoals schade in de vorm van winstderving en andere indirecte schade.</li>
+                                                      <li>Afnemer zal het Kadaster vrijwaren tegen aanspraken van derden terzake van schade waarvoor het Kadaster jegens deze derde(n) niet aansprakelijk zou zijn geweest indien deze derde(n) zelf afnemer was/waren geweest.</li>
+                                                      <li>De beperkingen van aansprakelijkheid in deze algemene voorwaarden gelden ook ten behoeve van derden die door het Kadaster worden ingeschakeld bij de uitvoering van de overeenkomst.</li>
+                                                      <li>De in deze voorwaarden opgenomen beperkingen van aansprakelijkheid gelden niet indien de schade is te wijten aan opzet of bewuste roekeloosheid van het Kadaster of zijn leidinggevende ondergeschikten.</li>
+                                                    </ol>
+
+                                                    <p><strong>Artikel 10. Overmacht</strong></p>
+
+                                                    <ol>
+                                                      <li>Onder overmacht wordt verstaan: omstandigheden die de nakoming van de verbintenis verhinderen en die niet aan het Kadaster zijn toe te rekenen. Tijdens overmacht worden de verplichtingen van het Kadaster opgeschort.</li>
+                                                      <li>Partijen zijn in geval van overmacht niet gehouden tot nakoming van de verplichtingen die voortvloeien uit de tussen hen gesloten overeenkomst. De partij die zich op overmacht beroept, dient dit zo spoedig als mogelijk aan de andere partij mede te delen. Onder overmacht wordt in ieder geval (maar niet daartoe beperkt) begrepen: bovenmatig ziekteverzuim, bijvoorbeeld als gevolg van epidemieën waardoor een substantieel deel van het personeel van een der partijen niet meer in staat is werkzaamheden te verrichten, algehele stroomstoringen en/of storingen in kabel- of internetverbindingen, de omstandigheid dat het Kadaster een prestatie die van belang is in verband met de door hem te leveren prestatie niet, niet tijdig of niet behoorlijk geleverd krijgt en overheidsmaatregelen die het Kadaster verhinderen zijn verplichtingen tijdig en/of deugdelijk na te komen.</li>
+                                                      <li>Indien de overmacht(situatie) langer duurt dan dertig dagen na de mededeling als bedoeld in het tweede lid, zijn beide partijen bevoegd de overeenkomst te ontbinden.</li>
+                                                      <li>Het Kadaster heeft ook het recht zich op overmacht te beroepen indien de omstandigheid die (verdere) nakoming verhindert, intreedt nadat het Kadaster zijn verbintenis had moeten nakomen.</li>
+                                                      <li>Indien het Kadaster bij het intreden van de overmacht al gedeeltelijk aan zijn verplichtingen heeft voldaan of slechts gedeeltelijk aan zijn verplichtingen kan voldoen, is hij gerechtigd het reeds uitgevoerde c.q. uitvoerbare deel afzonderlijk te factureren en is afnemer gehouden deze factuur te voldoen als betrof het een afzonderlijk contract.</li>
+                                                      <li>Partijen zijn in het geval van overmacht niet gehouden tot vergoeding van enige schade die ontstaat of ontstaan is als gevolg van die overmachtsituatie en/of de ontbinding van de overeenkomst.</li>
+                                                    </ol>
+
+                                                    <p><strong>Artikel 11. Geschillenbeslechting en toepasselijk recht</strong></p>
+
+                                                    <p>De vorderingen van het Kadaster op afnemer zijn onmiddellijk opeisbaar in de volgende gevallen:</p>
+
+                                                    <p>-&nbsp;indien na het sluiten van de overeenkomst aan het Kadaster omstandigheden ter kennis komen die hem goede grond geven te vrezen dat afnemer niet aan zijn verplichtingen zal voldoen;</p>
+
+                                                    <p>-&nbsp;indien het Kadaster afnemer gevraagd heeft zekerheid te stellen voor de nakoming en deze zekerheid uitblijft, dan wel onvoldoende is;</p>
+
+                                                    <p>-&nbsp;ingeval van faillissement, surseance van betaling, schuldsanering of liquidatie van afnemer;</p>
+
+                                                    <p>-&nbsp;indien afnemer anderszins in verzuim is en niet voldoet aan zijn verplichtingen uit de overeenkomst.</p>
+
+                                                    <p>In genoemde gevallen is het Kadaster bevoegd de verdere uitvoering van de overeenkomst op te schorten en/of tot gehele of gedeeltelijke ontbinding van de overeenkomst over te gaan, één en ander onder gehoudenheid van afnemer de hierdoor door het Kadaster geleden schade te vergoeden en onverminderd de overigens aan het Kadaster toekomende rechten.</p>
+
+                                                    <p><strong>Artikel 12. Overeenkomst op afstand</strong></p>
+
+                                                    <ol>
+                                                      <li>Het bepaalde in dit artikel geldt alleen indien afnemer consument is en sprake is van een overeenkomst op afstand als bedoeld in artikel 6:230g lid 1 sub e BW.</li>
+                                                      <li>Iedere opdracht aan en bestelling bij het Kadaster kan door afnemer binnen vierentwintig uur nadat afnemer de bestelling heeft geplaatst worden geannuleerd, mits het product nog niet is verzonden/geleverd. Annulering kan zonder opgave van redenen plaatsvinden. Wanneer het bestelde door het Kadaster is geleverd/verzonden, is annulering niet meer mogelijk. Annulering dient plaats te vinden door het volgen van de hiervoor ingerichte procedure op www.kadaster.nl.</li>
+                                                      <li>Nadat afnemer de producten heeft ontvangen, heeft hij gedurende een termijn van veertien kalenderdagen een herroepingsrecht. Afnemer is ingevolge dit herroepingsrecht gerechtigd om de overeenkomst te herroepen (ontbinden). Afnemer krijgt bij een terechte herroeping het volledige door hem betaalde tarief gerestitueerd.</li>
+                                                      <li>Voor het gebruik maken van het herroepingsrecht dient afnemer de hiervoor -op www.kadaster.nl- ingerichte procedure te volgen.</li>
+                                                      <li>Afnemer heeft, nadat hij zich op het herroepingsrecht heeft beroepen, veertien kalenderdagen de tijd om het bestelde retour te zenden.</li>
+                                                      <li>Het door afnemer voor het bestelde aan het Kadaster betaalde bedrag zal, indien sprake is van een terechte herroeping, zo spoedig mogelijk, maar uiterlijk binnen veertien kalenderdagen na ontvangst door het Kadaster van de in het kader van de herroeping door afnemer uitgebrachte verklaring tot ontbinding, door het Kadaster worden terugbetaald.</li>
+                                                      <li>Afnemer heeft geen aanspraak op een herroepings- en ontbindingsrecht in de gevallen genoemd in artikel 6:230p BW. Dit geldt met name bij:<br>
+                                                      -&nbsp;&nbsp;&nbsp; een overeenkomt waarbij afnemer het Kadaster specifiek heeft verzocht hem te bezoeken om daar dringende herstellingen of onderhoud te verrichten, met uitzondering van aanvullende dienstverlening waar afnemer niet uitdrukkelijk om heeft verzocht en levering van andere zaken dan die noodzakelijk zijn om het onderhoud of de herstellingen uit te voeren;<br>
+                                                      -&nbsp;&nbsp;&nbsp; een overeenkomst tot het verrichten van diensten, na nakoming van de overeenkomst, indien de nakoming is begonnen met uitdrukkelijke voorafgaande instemming van afnemer en afnemer heeft verklaard afstand te doen van zijn recht van ontbinding zodra het Kadaster de overeenkomst is nagekomen;<br>
+                                                      -&nbsp;&nbsp;&nbsp; de levering van digitale inhoud die niet op een materiële drager is geleverd, voor zover de nakoming is begonnen met uitdrukkelijke voorafgaande toestemming van afnemer en afnemer heeft verklaard dat hij daarmee afstand doet van zijn recht van ontbinding.</li>
+                                                    </ol>
+
+                                                    <p><strong>Artikel 13. Geschillenbeslechting en toepasselijk recht</strong></p>
+
+                                                    <ol>
+                                                      <li>Op elke met het Kadaster gesloten overeenkomst is Nederlands recht van toepassing.</li>
+                                                      <li>In afwijking van de wetteljike regels voor de bevoegdheid van de burgerlijke rechter zal elk geschil tussen het Kadaster en afnemer, in geval de rechtbank bevoegd is, in eerste instantie bij uitsluiting worden beslecht door de Rechtbank Gelderland (locatie Zutphen). Het Kadaster blijft steeds bevoegd een geschil voor te leggen aan de volgens de wet of het toepasselijke internationale verdrag bevoegde rechter.</li>
+                                                    </ol>
+
+                                                    <p><br>
+                                                    &nbsp;</p></div>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Begrepen!</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                        <footer class="footer navbar-dark">
                                           <div class="container">
                                             <div class="row">
                                               <div class="col-lg-7 h-100 text-center text-lg-left my-auto">
@@ -664,12 +1028,12 @@
                                               </div>
                                               <div class="col-lg-2 h-100 text-center my-auto">
                                                 <a href="https://data.pdok.nl">
-                                                  <img src="img/pdoklogo.png" style="max-width: 100px;">
+                                                  <img src="img/intro-logo.png" style="max-width: 100px;">
                                                   </a>
                                                 </div>
                                                 <div class="col-lg-3 h-100 text-center text-lg-right my-auto">
                                                   <a href="https://kadaster.nl">
-                                                    <img src="img/kadasterlogo.png" style="max-width: 100px;">
+                                                    <img src="img/kadasterlogowit.png" style="max-width: 100px;">
                                                     </a>
                                                   </div>
                                                 </div>
@@ -693,8 +1057,30 @@
 
         });
         $(document).ready(function() {
-            $('#example').DataTable();
+            $('#example').DataTable(
+                {
+                    "paging": false,
+                    "info": false,
+                    "searching": false
+
+                }
+                );
         } );
+
+        app.controller('ctrlr', function($scope, $http){
+    $http.get('localhost:3000').success(function(data) {
+        $scope.stuff = data;
+    });
+});
+
+            $.ajax({
+                url: "zwollekoopsom.json",
+                dataType: "json"
+            }).success(function(data){
+                $('#zwolle').append(JSON.stringify(data));
+            });
+
+      
 
         $('#example').DataTable( {
             language: {
@@ -721,12 +1107,13 @@
         } );
 
         $.fn.dataTable.ext.errMode = 'throw';
- 
-        
-        $(function () {
-              $('[data-toggle="tooltip"]').tooltip()
-            })
 
+    </script>
+    
+    <script src="vendor/jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script src="vendor/jQRangeSlider-5.7.2/jQDateRangeSlider-min.js"></script>
+    <script>
+    
     </script>
 
 </body>

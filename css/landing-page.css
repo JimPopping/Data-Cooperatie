@@ -22,11 +22,6 @@ h6 {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700; }
 
-
-  .searchEngine {
-    background: url("../img/map.png") no-repeat center center;
-  }
-
 header.masthead {
   position: relative;
   background-color: #343a40;
@@ -54,17 +49,6 @@ header.masthead {
       header.masthead h1 {
         font-size: 3rem; } }
 
-.showcase .showcase-text {
-  padding: 3rem; }
-
-.showcase .showcase-img {
-  min-height: 30rem;
-  background-size: cover; }
-
-@media (min-width: 768px) {
-  .showcase .showcase-text {
-    padding: 7rem; } }
-
 .features-icons {
   padding-top: 3rem;
   padding-bottom: 3rem; }
@@ -76,148 +60,6 @@ header.masthead {
         font-size: 4.5rem; }
     .features-icons .features-icons-item:hover .features-icons-icon i {
       font-size: 5rem; }
-
-.testimonials {
-  padding-top: 7rem;
-  padding-bottom: 7rem; }
-  .testimonials .testimonial-item {
-    max-width: 18rem; }
-    .testimonials .testimonial-item img {
-      max-width: 12rem;
-      box-shadow: 0px 5px 5px 0px #adb5bd; }
-
-.call-to-action {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/bg-masthead2.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 7rem;
-  padding-bottom: 7rem; }
-  .call-to-action .overlay {
-    position: absolute;
-    background-color: #212529;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.3; }
-
-    .over-ons-titel {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/bg-masthead-6.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 7rem;
-  padding-bottom: 7rem; }
-  .over-ons-titel .overlay {
-    position: absolute;
-    background-color: #212529;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.3; }
-
-    .over-kpi {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/KPI.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 7rem;
-  padding-bottom: 7rem; }
-  .over-kpi .overlay {
-    position: absolute;
-    background-color: #212529;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.3; }
-
-    .kaart-van-de-toekomst {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/bg-masthead-4.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 7rem;
-  padding-bottom: 7rem; }
-  .kaart-van-de-toekomst .overlay {
-    position: absolute;
-    background-color: #212529;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.3; }
-
-    .inschrijven-titel {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/bg-masthead-5.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 7rem;
-  padding-bottom: 7rem; }
-  .inschrijven-titel .overlay {
-    position: absolute;
-    background-color: #212529;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.3; }
-
-    .contact-titel {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/bg-masthead-8.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 7rem;
-  padding-bottom: 7rem; }
-  .contact-titel .overlay {
-    position: absolute;
-    background-color: #212529;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.3; }
-
-    .logo-section {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/bg-masthead2.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 7rem;
-  padding-bottom: 4rem; }
-  .logo-section .overlay {
-    position: absolute;
-    background-color: #212529;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.3; }
 
 footer.footer {
   padding-top: 4rem;
@@ -237,13 +79,10 @@ footer.footer {
   color: #00387d !important;
 }
 .navbar-brand {
-    font-family: KadasterLtLF; 
-    font-size: 150%;
-    letter-spacing: 0.25px;
-    color: #007ea9 !important;
+    font-family: KadasterLtLF;
+    font-size: 140%;
+    font-weight: bold;
     transition: all 0.3s;
-} .navbar-brand:hover {
-    color: #006590 !important;
 }
 .text-primary {
     color: #007ea9!important;
@@ -253,12 +92,6 @@ footer.footer {
   -webkit-box-shadow: 0px 0px 8px 0px #777777; 
   box-shadow: 0px 0px 8px 0px #777777;
 }
-.social {
-  color: #007ea9!important;
-}
-.social:hover {
-  color: #006A95!important;
-}
 .navigation-font-kadaster {
   font-family: KadasterRegular;
   color: #007ea9 !important; 
@@ -267,15 +100,20 @@ footer.footer {
   font-family: KadasterRegular;
 }
 .kadaster-font-italic {
-  font-family: KadasterRegular;
+  font-family: KadasterItalic;
 }
 .kadaster-font-LtLF {
   font-family: KadasterLtLF;
 }
 .footernav {
+  transition all: 0.3s;
+  color: #fff;
   font-weight: bold;
   font-size: 20px;
-  text-decoration: none !important;
+  text-decoration: none;
+}.footernav:hover {
+  text-decoration: underline;
+  color: #fff;
 }
 .logo-img {
   max-width: 100%;
@@ -314,25 +152,7 @@ h1, h4 {
 
 }
 
-/** BUTTONS in Kadasterkleuren/style 
-
-kobaltblauw:        #00387d;
-klassiek groen:     #007ea9;
-innovatief blauw:   #008dc9;
-krachtig geel:      #d9c900;
-krachtig groen:     #70a426;
-
-PDOK oranje:        #e26f02;
-
-Regels kleuren Kadaster:
-• Geel en groen zijn puur accentkleuren; ze worden nooit gebruikt om een groot vlak te vullen.
-• Wit speelt een belangrijke rol; het zorgt voor rust en ruimte op de pagina en vergroot zo de leesbaarheid.
-• Klassiek groen  en kobalt vormen de basiskleuren. 
-• Wit en innovatief blauw vullen de basiskleuren aan.
-
-**/
-
-/** primary button in kobaltblauw **/
+/** <BUTTONS SECTION> **/
 .btn-primary {
   color: #fff;
   background-color: #00387d;
@@ -503,18 +323,6 @@ a:hover {
     text-shadow: 0 1px 0 #fff;
     opacity: .5;
 }
-.kpi_afb img {
-  margin-left: 3px;
-  margin-right: 3px;
-  margin-bottom: 3px;
-  margin-top: 3px;
-  -webkit-transition: 0.10s;
-  -moz-transition: 0.10s;
-  transition: 0.10s;
-}
-.kpi_afb img:hover {
-  opacity:  0.5;
-  }
 
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
@@ -525,13 +333,15 @@ a:hover {
 .navbar-dark {
   color: #fff !important;
   background-color: #007ea9 !important;
+  background: url("../img/shop_masthead.jpg")no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
 .icon-steps {
     color: #00387d !important;
-  }
-  .jumbo-front {
-    background-color: #007ea9;
-    color: #fff;
   }
   .scroll-menu {
     top:100px;
@@ -548,10 +358,6 @@ a:hover {
     background-color: #fff;
     z-index:1001;
   }
-  .kb {
-    background-color: #00387d !important;
-    border-color: #00387d !important;
-  }
   .pdokOranje {
     background-color: #e26f02 !important;
     border-color: #e26f02 !important;
@@ -560,3 +366,27 @@ a:hover {
     float: right;
     line-height: 1;
   }
+  .box-selector {
+    transition: 0.2s;
+  } .box-selector:hover {
+      -webkit-box-shadow: inset 0px 0px 139px -38px rgba(0,0,0,0.97);
+      -moz-box-shadow: inset 0px 0px 139px -38px rgba(0,0,0,0.97);
+        box-shadow: inset 0px 0px 139px -38px rgba(0,0,0,0.97);
+        cursor: pointer;
+        user-select: none;
+  } .box-selector:active {
+      background-color: #007ea9;
+      color: white;
+      -webkit-box-shadow: inset 0px 0px 139px -38px rgba(0,0,0,0.97);
+      -moz-box-shadow: inset 0px 0px 139px -38px rgba(0,0,0,0.97);
+        box-shadow: inset 0px 0px 139px -38px rgba(0,0,0,0.97);
+      cursor: pointer;
+      user-select: none;
+    } .box-selector:focus {
+      background-color: #007ea9;
+    }
+
+    .paymentCardHeader {
+      top: 50%;
+      cursor: pointer;
+    }

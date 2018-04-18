@@ -23,14 +23,10 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
       success: function (data, status, xhr) {
         var err = typeof data === 'string' ? null : data;
         //Fix for blank popup window
-        var doc = (new DOMParser()).parseFromString(data, "text/html"); 
+        var doc = (new DOMParser()).parseFromString(data, "text/html");
         if (doc.body.innerHTML.trim().length > 0)
           showResults(err, evt.latlng, data);
-          
-
-        localStorage.setItem("user",JSON.stringify(doc));
-                                
-
+          localStorage.setItem("test", data);
       },
       error: function (xhr, status, error) {
         showResults(xhr);
@@ -68,15 +64,18 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
   
   showGetFeatureInfo: function (err, latlng, content) {
     if (err) { console.log(err); return; } // do nothing if there's an error
-    
+
+    var buttonClick = '<h5 class="text-center">Nederland</h5><button class="btn btn-secondary" onclick="myFunction()">Selecteren</button>'
+
     // Otherwise show the content in a popup, or something.
     L.popup({ maxWidth: 800})
       .setLatLng(latlng)
-      .setContent(content)
-      .openOn(this._map);
+      .setContent(buttonClick)
+      .openOn(this._map)
   }
 });
 
 L.tileLayer.betterWms = function (url, options) {
   return new L.TileLayer.BetterWMS(url, options);  
 };
+

@@ -86,14 +86,14 @@
 }
 
 .sw-theme-default > ul.step-anchor > li.clickable > a:hover {
-    color: #4285F4 !important;
+    color: #00387d !important;
     background: transparent !important;
     cursor: pointer;
 }
 
 .sw-theme-default > ul.step-anchor > li > a::after {
     content: "";
-    background: #4285F4;
+    background: #00387d;
     height: 2px;
     position: absolute;
     width: 100%;
@@ -108,7 +108,7 @@
 
 .sw-theme-default > ul.step-anchor > li.active > a {
     border: none !important;
-    color: #4285F4 !important;
+    color: #00387d !important;
     background: transparent !important;
     cursor: pointer;
 }
@@ -127,7 +127,7 @@
 }
 
 .sw-theme-default > ul.step-anchor > li.done > a::after {
-    background: #5cb85c;
+    background: #e26f02;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
