@@ -23,10 +23,13 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
       success: function (data, status, xhr) {
         var err = typeof data === 'string' ? null : data;
         //Fix for blank popup window
-        var doc = (new DOMParser()).parseFromString(data, "text/html");
-        if (doc.body.innerHTML.trim().length > 0)
-          showResults(err, evt.latlng, data);
-          localStorage.setItem("test", data);
+      console.log(data);
+      var wmselements = data.features[0];
+      var prop = wmselements.properties;
+      var naam = prop.buurtnaam;
+      console.log(wmselements);
+      console.log(prop);
+      console.log(naam);
       },
       error: function (xhr, status, error) {
         showResults(xhr);
@@ -53,7 +56,7 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
           width: size.x,
           layers: this.wmsParams.layers,
           query_layers: this.wmsParams.layers,
-          info_format: 'text/html'
+          info_format: 'application/json'
         };
     
     params[params.version === '1.3.0' ? 'i' : 'x'] = point.x;
@@ -78,4 +81,3 @@ L.TileLayer.BetterWMS = L.TileLayer.WMS.extend({
 L.tileLayer.betterWms = function (url, options) {
   return new L.TileLayer.BetterWMS(url, options);  
 };
-
